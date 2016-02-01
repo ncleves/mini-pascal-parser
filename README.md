@@ -1,6 +1,9 @@
 # mini-pascal-parser
 A parser written in Perl that reads in a file of source code and then tells the user if it's syntactically correct in accordance with the Mini Pascal language. 
 
+Specify in terminal the filename of the source code for the parser to analyze. 
+Enter 'perl parser.pl sourcecode.txt' to test the validity of the example sourecode text file.
+
 Here is the grammar for the modified Mini Pascal language:
 
   \<program> ::= program \<progname> \<compound stmt>

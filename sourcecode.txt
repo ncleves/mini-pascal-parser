@@ -1,0 +1,9 @@
+program Abc3 
+begin
+ 	write(a, b, c);
+ 	begin 
+ 		if -5 + 10
+ 		then a := 5
+ 		else read(a)
+ 	end
+end
