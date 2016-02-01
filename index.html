@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mini Pascal Parser by ncleves</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mini Pascal Parser</h1>
+        <p>A parser written in Perl that reads in a file of source code and then tells the user if it&#39;s syntactically correct in accordance with the Mini Pascal language. </p>
+
+        <p class="view"><a href="https://github.com/ncleves/mini-pascal-parser">View the Project on GitHub <small>ncleves/mini-pascal-parser</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/ncleves/mini-pascal-parser/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ncleves/mini-pascal-parser/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ncleves/mini-pascal-parser">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="mini-pascal-parser" class="anchor" href="#mini-pascal-parser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mini-pascal-parser</h1>
+
+<p>A parser written in Perl that reads in a file of source code and then tells the user if it's syntactically correct in accordance with the Mini Pascal language. Through the use of lexical analysis the parser handles every terminal symbol or word individually and determines if they are part of the syntax of the language before moving on to the next terminal. </p>
+
+<p>Specify in terminal the filename of the source code for the parser to analyze. 
+Enter 'perl parser.pl sourcecode.txt' to test the validity of the example sourecode text file.</p>
+
+<p>Here is the grammar for the modified Mini Pascal language:</p>
+
+<p>&lt;program&gt; ::= program &lt;progname&gt; &lt;compound stmt&gt;</p>
+
+<p>&lt;compound stmt&gt; ::= begin &lt;stmt&gt; {; &lt;stmt&gt;} end</p>
+
+<p>&lt;stmt&gt; ::= &lt;simple stmt&gt; | &lt;structured stmt&gt;</p>
+
+<p>&lt;simple stmt&gt; ::= &lt;assignment stmt&gt; | &lt;read stmt&gt; | &lt;write stmt&gt;</p>
+
+<p>&lt;assignment stmt&gt; ::= &lt;variable&gt; := &lt;expression&gt;</p>
+
+<p>&lt;read stmt&gt; ::= read ( &lt;variable&gt; { , &lt;variable&gt; } )</p>
+
+<p>&lt;write stmt&gt; ::= write ( &lt;expression&gt; { , &lt;expression&gt; } )</p>
+
+<p>&lt;structured stmt&gt; ::=    &lt;compound stmt&gt; | &lt;if stmt&gt; | &lt;while stmt&gt;</p>
+
+<p>&lt;if stmt&gt; ::= if &lt;expression&gt; then &lt;stmt&gt; | 
+                if &lt;expression&gt; then &lt;stmt&gt; else &lt;stmt&gt;</p>
+
+<p>&lt;while stmt&gt; ::= while &lt;expression&gt; do &lt;stmt&gt;</p>
+
+<p>&lt;expression&gt; ::=  &lt;simple expr&gt; | 
+                    &lt;simple expr&gt; &lt;relational_operator&gt; &lt;simple expr&gt;</p>
+
+<p>&lt;simple expr&gt; ::= [ &lt;sign&gt; ] &lt;term&gt; { &lt;adding_operator&gt; &lt;term&gt; }</p>
+
+<p>&lt;term&gt; ::= &lt;factor&gt; { &lt;multiplying_operator&gt; &lt;factor&gt; }</p>
+
+<p>&lt;factor&gt; ::= &lt;variable&gt; | &lt;constant&gt; | ( &lt;expression&gt; )</p>
+
+<p>&lt;sign&gt; ::= + | -</p>
+
+<p>&lt;adding_operator&gt; ::= + | -</p>
+
+<p>&lt;multiplying_operator&gt; ::= * | /</p>
+
+<p>&lt;relational_operator&gt; ::= = | &lt;&gt; | &lt; | &lt;= | &gt;= | &gt;</p>
+
+<p>&lt;variable&gt; ::= &lt;letter&gt; { &lt;letter&gt; | &lt;digit&gt; }</p>
+
+<p>&lt;constant&gt; ::= &lt;digit&gt;  { &lt;digit&gt; }</p>
+
+<p>&lt;progname&gt; ::= &lt;capital_letter&gt; { &lt;letter&gt; | &lt;digit&gt; }</p>
+
+<p>&lt;capital_letter&gt; ::= A | B | C | ... | Z</p>
+
+<p>&lt;letter&gt; ::= a | b | c | ... | z | &lt;capital_letter&gt;</p>
+
+<p>&lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/ncleves">ncleves</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
