@@ -1,5 +1,5 @@
 # mini-pascal-parser
-A parser written in Perl that reads in a file of source code and then tells the user if it's syntactically correct in accordance with the Mini Pascal language. 
+A parser written in Perl that reads in a file of source code and then tells the user if it's syntactically correct in accordance with the Mini Pascal language. Through the use of lexical analysis the parser handles every terminal symbol or word individually and determines if they are part of the syntax of the language before moving on to the next terminal. 
 
 Specify in terminal the filename of the source code for the parser to analyze. 
 Enter 'perl parser.pl sourcecode.txt' to test the validity of the example sourecode text file.
